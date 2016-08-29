@@ -1,5 +1,5 @@
 package Number::LibPhoneNumber;
-$Number::LibPhoneNumber::VERSION = '0.01';
+$Number::LibPhoneNumber::VERSION = '0.02';
 # ABSTRACT: Perl interface to Goole's libphonenumber
 
 use strict;
@@ -35,7 +35,7 @@ Number::LibPhoneNumber - Perl interface to Goole's libphonenumber
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

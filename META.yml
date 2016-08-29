@@ -3,7 +3,6 @@ abstract: "Perl interface to Goole's libphonenumber"
 author:
   - 'Michael Schout <mschout@cpan.org>'
 build_requires:
-  Number::Phone::Formatter::Raw: '0'
   Socket: '0'
   Test::More: '0'
 configure_requires:
@@ -26,5 +25,5 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Number-LibPhoneNumber
   homepage: http://search.cpan.org/dist/Number-LibPhoneNumber/
   repository: git://github.com/mschout/perl-number-libphonenumber.git
-version: '0.01'
+version: '0.02'
 x_serialization_backend: 'YAML::Tiny version 1.63'

@@ -1,5 +1,9 @@
 Revision history for Number::LibPhoneNumber.
 
+0.02  2016-08-29
+    - remove Number::Phone::Formatter::Raw build requirement as it is optional
+      (only used if testing format_using)
+
 0.01  2016-08-29
     - original release
 
