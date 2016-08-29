@@ -1,0 +1,15 @@
+^blib/
+^inc/
+^Makefile$
+^Makefile\.old$
+^pm_to_blib$
+^\.git/
+^\.gitignore$
+~$
+error_log
+^dist\.ini
+^MYMETA
+\.o(?:bj)?$
+\.bs$
+\.def$
+LibPhoneNumber.c
