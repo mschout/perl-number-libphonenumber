@@ -1,0 +1,66 @@
+NAME
+
+    Number::LibPhoneNumber
+
+DESCRIPTION
+
+    Number::LibPhoneNumber is a module which provides a perl interface to
+    Google's libphonenumber.
+
+    Google's libphonenumber is a C++ library which provides an excellent
+    interface for parsing and formatting international phone numbers.
+
+PREREQUISITES
+
+    Before you can build Number::LibPhoneNumber, you need to to have the
+    following installed on your system:
+
+      * Perl 5.8.0 or greater
+
+      * Google's libphonenumber
+
+      Libphonenumber can be obtained from
+      https://github.com/googlei18n/libphonenumber
+
+      * A C++11 compliant compiler
+
+BUILDING THE MODULE
+
+    Assuming you have all of the prerequisites, building should be
+    realtively straightforward.
+
+     perl Makefile.PL
+     make
+     make test
+
+    If perl cannot find your libphonenumber library or includes, you can
+    specify them either via the command line, or, via environment
+    variables:
+
+     perl Makefile.PL LIBPHONENUMBER_INCLUDE=/path/to/include LIBPHONENUMBER_LIB=/path/to/libdir
+
+INSTALLATION
+
+     make install
+
+TROUBLESHOOTING
+
+    If you get an error like this:
+
+     Can't link/include C library 'phonenumbers/phonenumberutil.h', 'phonenumber', aborting.
+
+    This symptom can only mean that you either do not have libphonenumber
+    (and its headers) installed on your system, or, the compiler was unable
+    to locate the headers and/or the library itself. The solution is to
+    specify the path to the include and lib directory where the library and
+    its headers are on the command line as shown above.
+
+LICENSE
+
+    COPYRIGHT AND LICENSE
+
+    This software is copyright (c) 2016 by Michael Schout.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
