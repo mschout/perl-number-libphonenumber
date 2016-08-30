@@ -4,6 +4,7 @@ LICENSE
 LibPhoneNumber.xs
 MANIFEST
 MANIFEST.SKIP
+META.json
 META.yml
 Makefile.PL
 README
