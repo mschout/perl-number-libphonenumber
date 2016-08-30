@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Test::More;
 
-unless (eval { use Number::Phone::Formatter::Raw; 1 }) {
+unless (eval { require Number::Phone::Formatter::Raw; 1 }) {
     plan skip_all => 'Number::Format v3.1 or later is required for this test';
 }
 else {
