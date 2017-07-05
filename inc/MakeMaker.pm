@@ -54,6 +54,13 @@ if (defined $params{LIBPHONENUMBER_LIB}) {
     push @linker_flags, "-L$params{LIBPHONENUMBER_LIB}";
 }
 
+if ($] < 5.020000) {
+    if ($^O eq 'darwin') {
+        # 5.18 and earler need this flag on OS X
+        push @compiler_flags, '-Wno-reserved-user-defined-literal';
+    }
+}
+
 push @linker_flags, '-lphonenumber';
 
 $guess->add_extra_compiler_flags(join ' ', @compiler_flags);
