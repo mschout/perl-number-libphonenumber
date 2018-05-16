@@ -95,6 +95,9 @@ phone_number::format(number_format="international")
         else if (!strcasecmp(number_format.c_str(), "E.164") || !strcasecmp(number_format.c_str(), "E164")) {
             RETVAL = THIS->format(PhoneNumberUtil::PhoneNumberFormat::E164);
         }
+        else if (!strcasecmp(number_format.c_str(), "RFC3966")) {
+            RETVAL = THIS->format(PhoneNumberUtil::PhoneNumberFormat::RFC3966);
+        }
         else {
             RETVAL = THIS->format(PhoneNumberUtil::PhoneNumberFormat::INTERNATIONAL);
         }

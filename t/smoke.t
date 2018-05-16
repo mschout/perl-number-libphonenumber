@@ -154,7 +154,7 @@ subtest type => sub {
 };
 
 subtest format => sub {
-    plan tests => 41;
+    plan tests => 43;
 
     my %tests = (
         '+1 6502530000' => {
@@ -201,6 +201,8 @@ subtest format => sub {
     is $obj->format('E.164'), '+16502530000', 'format E.164';
     is $obj->format('e164'), '+16502530000', 'format e164';
     is $obj->format('e.164'), '+16502530000', 'format e.164';
+    is $obj->format('RFC3966'), 'tel:+1-650-253-0000', 'format e.164';
+    is $obj->format('rfc3966'), 'tel:+1-650-253-0000', 'format e.164';
 
     is $obj->format, '+1 650-253-0000', 'default format is international';
 };
