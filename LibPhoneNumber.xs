@@ -12,6 +12,7 @@ using i18n::phonenumbers::PhoneNumber;
 
 void
 set_phone_error(PhoneNumberUtil::ErrorType error) {
+    dTHX;
     switch (error) {
         case PhoneNumberUtil::ErrorType::NO_PARSING_ERROR:
             // no error.
