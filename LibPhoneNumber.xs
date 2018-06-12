@@ -105,5 +105,20 @@ phone_number::format(number_format="international")
     OUTPUT:
         RETVAL
 
+string
+region_code_for_country(SV* pkg, int country_code)
+    CODE:
+        string region_code;
 
+        PhoneNumberUtil::GetInstance()->GetRegionCodeForCountryCode(country_code, &region_code);
 
+        RETVAL = region_code;
+    OUTPUT:
+        RETVAL
+
+int
+country_code_for_region(SV *pkg, string region_code)
+    CODE:
+        RETVAL = PhoneNumberUtil::GetInstance()->GetCountryCodeForRegion(region_code);
+    OUTPUT:
+        RETVAL

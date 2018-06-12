@@ -5,7 +5,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 14;
+use Test::More tests => 16;
 
 use_ok 'Number::LibPhoneNumber' or exit 1;
 
@@ -212,4 +212,15 @@ subtest invalid_svtype => sub {
 
     my $obj = new_ok 'Number::LibPhoneNumber', [2423570000, 'US'];
     is $obj->format, '+1 242-357-0000';
+};
+
+subtest region_code_for_country_code => sub {
+    is Number::LibPhoneNumber->region_code_for_country(1), 'US';
+    is Number::LibPhoneNumber->region_code_for_country(64), 'NZ';
+};
+
+subtest country_code_for_region => sub {
+    cmp_ok(Number::LibPhoneNumber->country_code_for_region('US'), '==', 1);
+    cmp_ok(Number::LibPhoneNumber->country_code_for_region('CA'), '==', 1);
+    cmp_ok(Number::LibPhoneNumber->country_code_for_region('NZ'), '==', 64);
 };

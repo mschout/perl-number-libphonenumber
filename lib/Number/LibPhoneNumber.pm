@@ -90,6 +90,28 @@ Returns the type of number.  This will be one of the following values.
 * voicemail
 * unknown
 
+=method country_code_for_region($region_code): int
+
+Returns the country calling code for a specific region.  For example, this
+would be C<1> for the United States, and C<64> for New Zealand.
+
+E.g.:
+
+ Number::LibPhoneNumber->country_code_for_region('US')
+
+=method region_code_for_country($country_code): string
+
+Returns the region code the matches the specific country code.  Note that it is
+possible that several regions share the same country calling code (e.g.: US and
+Canada), and in that case, only one of the regions (normally the one with the
+largest population) is returned.  If the country code is valid but doesn't
+match a specific region (such as non-geographical codes like C<800>), the
+region code C<001> will be returned.
+
+E.g.:
+
+ Number::LibPhoneNumber->region_code_for_country(1)
+
 =cut
 
 1;

@@ -6,6 +6,8 @@ Revision history for Number::LibPhoneNumber.
     - Fix compile problem for threaded perls
     - Fix possible "number is invalid svtype" exception due to overly strict
       std::string typemap [github #3]
+    - Add class method region_code_for_country($country_code): string [github #4]
+    - Add class method country_code_for_region($region): int [github #4]
 
 0.03  2016-08-30
     - fix format-using test for case where ::Formatter::Raw was not present
