@@ -5,7 +5,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 13;
+use Test::More tests => 14;
 
 use_ok 'Number::LibPhoneNumber' or exit 1;
 
@@ -205,4 +205,11 @@ subtest format => sub {
     is $obj->format('rfc3966'), 'tel:+1-650-253-0000', 'format e.164';
 
     is $obj->format, '+1 650-253-0000', 'default format is international';
+};
+
+subtest invalid_svtype => sub {
+    my %item = (number => '2423570000', country_code => 'US');
+
+    my $obj = new_ok 'Number::LibPhoneNumber', [2423570000, 'US'];
+    is $obj->format, '+1 242-357-0000';
 };
