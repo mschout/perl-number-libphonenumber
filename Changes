@@ -4,6 +4,8 @@ Revision history for Number::LibPhoneNumber.
     - Fix compiler error under darwin with perl versions < 5.20
     - Add support for RFC3966 format in format()
     - Fix compile problem for threaded perls
+    - Fix possible "number is invalid svtype" exception due to overly strict
+      std::string typemap [github #3]
 
 0.03  2016-08-30
     - fix format-using test for case where ::Formatter::Raw was not present
